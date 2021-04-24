@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\madel\\Desktop\\Projects\\WebScraperAPI\\WebScraperAPI\\WebScraperAPI.csproj": {}
+    "C:\\Users\\madel\\Desktop\\Projects\\WebScraperChallenge\\WebScraperAPI\\WebScraperAPI\\WebScraperAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\madel\\Desktop\\Projects\\WebScraperAPI\\WebScraperAPI\\WebScraperAPI.csproj": {
+    "C:\\Users\\madel\\Desktop\\Projects\\WebScraperChallenge\\WebScraperAPI\\WebScraperAPI\\WebScraperAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\madel\\Desktop\\Projects\\WebScraperAPI\\WebScraperAPI\\WebScraperAPI.csproj",
+        "projectUniqueName": "C:\\Users\\madel\\Desktop\\Projects\\WebScraperChallenge\\WebScraperAPI\\WebScraperAPI\\WebScraperAPI.csproj",
         "projectName": "WebScraperAPI",
-        "projectPath": "C:\\Users\\madel\\Desktop\\Projects\\WebScraperAPI\\WebScraperAPI\\WebScraperAPI.csproj",
+        "projectPath": "C:\\Users\\madel\\Desktop\\Projects\\WebScraperChallenge\\WebScraperAPI\\WebScraperAPI\\WebScraperAPI.csproj",
         "packagesPath": "C:\\Users\\madel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\madel\\Desktop\\Projects\\WebScraperAPI\\WebScraperAPI\\obj\\",
+        "outputPath": "C:\\Users\\madel\\Desktop\\Projects\\WebScraperChallenge\\WebScraperAPI\\WebScraperAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
