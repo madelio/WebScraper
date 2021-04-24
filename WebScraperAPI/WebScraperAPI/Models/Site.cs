@@ -7,7 +7,7 @@ namespace WebScraperAPI.Models
 {
     public class Site
     {
-        public string url;
-        public string content;
+        public string Url { get; set; }
+        public string Content { get; set; }
     }
 }

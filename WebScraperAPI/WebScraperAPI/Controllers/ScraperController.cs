@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebScraperAPI.Models;
+using WebScraperScript.WebScraper.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,14 +16,20 @@ namespace WebScraperAPI.Controllers
     {
         // GET: api/<ScraperController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public Site Get()
         {
-            return new string[] { "value1", "value2" };
+            var scraper = new SiteScanner();
+            var testUrl = "https://www.york.ac.uk/teaching/cws/wws/webpage1.html";
+            return new Site()
+            {
+                Url = testUrl,
+                Content = scraper.GetRawHtml(testUrl)
+            };
         }
 
         // GET api/<ScraperController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public string Get(string id)
         {
             return "value";
         }

@@ -16,6 +16,9 @@ namespace WebScraperScript.WebScraper.Services
             _configuration = configuration;
             _baseSavedHtmlFolder = _configuration["BaseSavedHtmlFolder"];
         }
+        public SiteScanner()
+        {
+        }
 
         public string GetRawHtml(string url)
         {
