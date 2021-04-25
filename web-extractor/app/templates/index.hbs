@@ -1,0 +1,31 @@
+<main class="web-extractor">
+    <section>
+        <h1>Web Extractor</h1>
+        <p>Enter multiple urls on a new line</p>
+        {{textarea value=inputUrls}}
+        <button onclick={{action 'getSiteData'}}>Submit</button>
+    </section>
+
+    {{#if showResults}}
+        <section>
+                <h1>Results</h1>
+                {{log showContent}}
+                <div class="text-content">
+                    {{#if isLoading}}
+                        <p>Loading Results for:</p>
+                        <p>{{inputUrls}}</p>
+
+                    {{else if hasError}}
+                        <p>Something Went Wrong: {{error}}</p>
+                    {{else}}
+                    {{!-- {{else if showContent}} --}}
+                            {{#each results as |result|}}
+                                <p><strong>Result for Url:</strong> {{result.url}}</p>
+                                {{textarea value=result.rawHtmlContent}}
+                            {{/each}}
+                    {{/if}}
+                </div>
+        </section>
+    {{/if}}
+
+</main>

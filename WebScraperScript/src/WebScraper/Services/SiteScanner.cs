@@ -1,72 +1,69 @@
 ﻿using HtmlAgilityPack;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using WebScraperScript.src.WebScraper.Models;
 
 namespace WebScraperScript.WebScraper.Services
 {
     public class SiteScanner : ISiteScanner
     {
-        private readonly IConfiguration _configuration;
-        private readonly string _baseSavedHtmlFolder;
-        private StreamWriter _outputFile;
-
-        public SiteScanner(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            _baseSavedHtmlFolder = _configuration["BaseSavedHtmlFolder"];
-        }
+ 
         public SiteScanner()
         {
         }
 
-        public string GetRawHtml(string url)
+        public SiteData GetSiteData(string url)
         {
             var scraper = new HtmlWeb();
             var page = scraper.Load(url);
             var nodes = page.DocumentNode.Descendants();
 
-            var sb = new System.Text.StringBuilder();
-            sb.AppendLine($"Results for url: {url}");
+            var sb = new StringBuilder();
             foreach (var currNode in nodes)
             {
                 var headline = currNode.InnerHtml;
                 sb.AppendLine(headline);
             }
-            return sb.ToString();
+
+            return new SiteData()
+            {
+                Url = url,
+                RawHtmlContent = sb.ToString()
+            };
         }
 
-        public string GetRawHtml(string[] urls)
+        public List<SiteData> GetSiteData(string[] urls)
         {
-            var sb = new System.Text.StringBuilder();
+            var allSiteData = new List<SiteData>();
             foreach (var url in urls)
             {
-                sb.AppendLine(GetRawHtml(url));
+                allSiteData.Add(GetSiteData(url));
             }
-            return sb.ToString();
+
+            return allSiteData;
         }
 
         public void SaveHtmlToFile(string url, string outputFilename) {
-            var scraper = new HtmlWeb();
-            var page = scraper.Load(url);
-            var nodes = page.DocumentNode.Descendants();
-
-            if (_outputFile == null)
-            {
-                _outputFile = new StreamWriter(_baseSavedHtmlFolder + outputFilename + ".html");
-            }
-            _outputFile.WriteLine($"Results for url: {url}");
-            foreach (var currNode in nodes)
-            {
-                var headline = currNode.InnerHtml;
-                _outputFile.WriteLine(headline);
-            }
+            var siteData = GetSiteData(url);
+            var outputFile = new StreamWriter(outputFilename);
+            outputFile.WriteLine($"Results for url: {siteData.Url}");
+            outputFile.WriteLine(siteData.RawHtmlContent);
         }
 
-        public void SaveHtmlToFile(string[] urls, string outputFileName) {
-            foreach (var url in urls)
+        /// <summary>
+        ///  /
+        /// </summary>
+        /// <param name="urls"></param>
+        /// <param name="outputFilename"></param>
+        public void SaveHtmlToFile(string[] urls, string outputFilename) {
+            var allSiteData = GetSiteData(urls);
+            var outputFile = new StreamWriter(outputFilename);
+            foreach (var siteData in allSiteData)
             {
-                SaveHtmlToFile(url, outputFileName);
+                outputFile.WriteLine($"Results for url: {siteData.Url}");
+                outputFile.WriteLine(siteData.RawHtmlContent);
             }
         }
     }

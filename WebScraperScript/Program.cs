@@ -15,14 +15,14 @@ namespace WebScraperScript
              .AddCommandLine(args)
              .Build();
 
-            Console.WriteLine("Start Scraping!");
-            var scanner = new SiteScanner(configuration);
-            //scanner.SaveHtmlToFile("https://www.york.ac.uk/teaching/cws/wws/webpage1.html", "tryThisOne");
-            string[] urls = { "https://www.york.ac.uk/teaching/cws/wws/webpage1.html", "https://stackoverflow.com/questions/574911/difference-between-windows-and-console-application" };
-            // scanner.SaveHtmlToFile(urls, "moreThanOne");
-            var result = scanner.GetRawHtml(urls);
-            Console.WriteLine(result);
-            Console.WriteLine("End Scraping!");
+          //  Console.WriteLine("Start Scraping!");
+          ////  var scanner = new SiteScanner(configuration);
+          //  //scanner.SaveHtmlToFile("https://www.york.ac.uk/teaching/cws/wws/webpage1.html", "tryThisOne");
+          //  string[] urls = { "https://www.york.ac.uk/teaching/cws/wws/webpage1.html", "https://stackoverflow.com/questions/574911/difference-between-windows-and-console-application" };
+          //  // scanner.SaveHtmlToFile(urls, "moreThanOne");
+          //  var result = scanner.GetSiteData(urls);
+          //  Console.WriteLine(result);
+          //  Console.WriteLine("End Scraping!");
         }
     }
 }
