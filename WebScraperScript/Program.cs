@@ -12,7 +12,7 @@ namespace WebScraperScript
 
             Console.WriteLine("Start Scraping!");
      
-            var baseFolder = "./WebScraper/SavedHtmlPages/";
+            var baseFolder = "./WebScraper/Resources/";
 
             await new SiteScanner().SaveHtmlToFile("http://zenhabits.com/", baseFolder + "zenhabits.html");
             await new SiteScanner().SaveHtmlToFile("https://www.york.ac.uk/teaching/cws/wws/webpage1.html", baseFolder + "york.html");

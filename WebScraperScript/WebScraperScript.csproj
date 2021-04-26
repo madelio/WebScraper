@@ -11,6 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="WebScraper\SavedHtmlPages\" />
+    <Folder Include="WebScraper\Resources\" />
   </ItemGroup>
 </Project>

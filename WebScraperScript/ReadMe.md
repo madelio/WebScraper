@@ -4,7 +4,7 @@ This project is a simple script which scrapes the content of three websites that
 
 ## Prerequisites
 You will need the following things installed on your computer
-* (.NETCore 3.1)[https://dotnet.microsoft.com/download]
+* [.NETCore 3.1][https://dotnet.microsoft.com/download]
 
 ## Installation
 
