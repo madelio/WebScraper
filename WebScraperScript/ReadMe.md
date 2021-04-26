@@ -2,11 +2,14 @@
 
 This project is a simple script which scrapes the content of three websites that I've defined and saves them in the SavedHtmlPages folder within the project as .html pages. 
 
+## Prerequisites
+You will need the following things installed on your computer
+* (.NETCore 3.1)[https://dotnet.microsoft.com/download]
 
 ## Installation
 
 * `git clone https://github.com/madelio/WebScraper.git`
-* `cd WebScraperScript`
+* `cd WebScraper/WebScraperScript`
 
 ## Running 
 
