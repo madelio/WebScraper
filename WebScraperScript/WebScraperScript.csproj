@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,11 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
-    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <Compile Remove="WebScraper\SavedHtmlPages\**" />
+    <EmbeddedResource Remove="WebScraper\SavedHtmlPages\**" />
+    <None Remove="WebScraper\SavedHtmlPages\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="WebScraper\SavedHtmlPages\" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
 </Project>
