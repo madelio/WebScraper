@@ -9,8 +9,4 @@
     <PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="WebScraper\Resources\" />
-  </ItemGroup>
 </Project>
