@@ -18,6 +18,8 @@ namespace WebScraperAPI.Controllers
             _siteScanner = siteScanner;
         }
 
+
+        //Sample call: https://localhost:44379/api/siteData/https%3A%2F%2Fwww.york.ac.uk%2Fteaching%2Fcws%2Fwws%2Fwebpage1.html
         [HttpGet("{url}")]
         public async Task<IActionResult> Get(string url)
         {

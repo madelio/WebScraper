@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "api/siteData/https%3A%2F%2Fwww.york.ac.uk%2Fteaching%2Fcws%2Fwws%2Fwebpage1.html",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
