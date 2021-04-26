@@ -1,7 +1,7 @@
 # web-extractor
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This app is created as a way to add any urls to a textbox and get the HTML contents of the url site back
 
 ## Prerequisites
 
@@ -14,19 +14,26 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/madelio/WebScraper.git`
 * `cd web-extractor`
 * `npm install`
 
 ## Running / Development
 
+### Run API Server to access the api
+* Run the [WebScraperAPI](https://github.com/madelio/WebScraper/tree/web-scraper/WebScraperAPI) in order access the Web API in localhost
+
+### Run Ember Project
+
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Code Generators
+## Usage
+1. Enter urls in the text input, for multiple urls simply add the url on a new line
+2. Hit Submit
+3. If the urls are valid, the html string for each url will be output in the Results area
 
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
@@ -43,10 +50,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 

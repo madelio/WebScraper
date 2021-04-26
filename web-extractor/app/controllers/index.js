@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { bool } from '@ember/object/computed';
+import { isPresent } from '@ember/utils';
 
 export default Controller.extend({
     inputUrls: '',
@@ -16,28 +17,24 @@ export default Controller.extend({
         return this.inputUrls !== '';
     }),
     isValidUrl(url) {
-     var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-    return !!pattern.test(url);
-
+        return isPresent(url) && (url.startsWith('http://') || url.startsWith('https://'));
+    },
+    fetch(url) {
+        // wrapper function for in-built fetch api for testing purposes
+        return fetch(url);
     },
     hasError: bool('error'),
     actions: {
         getSiteData() {
-            if (this.inputUrls == '') return;
+            if (!isPresent(this.encodedUrls)) return;
 
             this.set('isLoading', true);
             const siteDataEndpoint = "https://localhost:44379/api/siteData/";
-            Promise.all(this.encodedUrls.map(encodedUrl => fetch(siteDataEndpoint + encodedUrl)))
+            Promise.all(this.encodedUrls.map(encodedUrl => this.fetch(siteDataEndpoint + encodedUrl)))
                 .then(responses => Promise.all(responses.map(result => result.json())))
                 .then(results => this.set('results', results))
                 .catch(error => this.set('error', error))
                 .finally(() => this.set('isLoading', false));
         }
     }
-
 });

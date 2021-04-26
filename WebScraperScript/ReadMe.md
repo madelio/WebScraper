@@ -1,4 +1,15 @@
-﻿To run: 
-1. Open Terminal or Powershell within the "WebScraperScript" Folder
-2. Run `dotnet run`
-3. Observe the 3 html files under the `SavedHtmlPages` that were created from the script
+﻿# WebScraperScript
+
+This project is a simple script which scrapes the content of three websites that I've defined and saves them in the SavedHtmlPages folder within the project as .html pages. 
+
+
+## Installation
+
+* `git clone https://github.com/madelio/WebScraper.git`
+* `cd WebScraperScript`
+
+## Running 
+
+* Open PowerShell or Terminal within the `WebScraperScript` project
+* run `dotnet run` in the terminal
+* Observe the 3 html files under the `SavedHtmlPages` that were created from the script

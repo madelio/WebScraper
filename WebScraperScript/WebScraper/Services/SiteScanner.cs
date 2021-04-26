@@ -10,9 +10,8 @@ namespace WebScraperScript.WebScraper.Services
     {
         public async Task<SiteData> GetSiteData(string url)
         {
-            var scraper = new HtmlWeb();
-            var page = await scraper.LoadFromWebAsync(url);
-            var nodes = page.DocumentNode.Descendants();
+            var page = await new HtmlWeb().LoadFromWebAsync(url);
+            var nodes = page.DocumentNode?.Descendants();
 
             var sb = new StringBuilder();
             foreach (var currNode in nodes)
@@ -30,7 +29,7 @@ namespace WebScraperScript.WebScraper.Services
 
         public async Task SaveHtmlToFile(string url, string outputFilename) {
             var siteData = await GetSiteData(url);
-            new StreamWriter(outputFilename).WriteLine(siteData.RawHtmlContent);
+            new StreamWriter(outputFilename).WriteLine(siteData?.RawHtmlContent);
         }
     }
 }

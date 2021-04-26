@@ -6,27 +6,27 @@
         <button onclick={{action 'getSiteData'}}>Submit</button>
     </section>
 
-        <section>
-            {{#if showResults}}
-                <h1>Results</h1>
-                <div class="text-content">
-                    {{#if isLoading}}
-                        <p>Loading Results for:</p>
-                        <p>{{inputUrls}}</p>
+    <section>
+        {{#if showResults}}
+            <h1>Results</h1>
+            <div class="text-content">
+                {{#if isLoading}}
+                    <p>Loading Results for:</p>
+                    <p>{{inputUrls}}</p>
 
-                    {{else if hasError}}
-                        <p>Something Went Wrong: {{error}}</p>
-                    {{else}}
-                            {{#each results as |result|}}
-                                <p><strong>Result for Url:</strong> {{result.url}}</p>
-                                {{#if result.rawHtmlContent}}
-                                    {{textarea value=result.rawHtmlContent}}
-                                {{else}}
-                                    <p>{{errorMessages.invalidUrlFormat}}</p>
-                                {{/if}}
-                            {{/each}}
-                    {{/if}}
-                </div>
-            {{/if}}
-        </section>
+                {{else if hasError}}
+                    <p>Something Went Wrong: {{error}}</p>
+                {{else}}
+                        {{#each results as |result|}}
+                            <p><strong>Result for Url:</strong> {{result.url}}</p>
+                            {{#if result.rawHtmlContent}}
+                                {{textarea value=result.rawHtmlContent}}
+                            {{else}}
+                                <p>{{errorMessages.invalidUrlFormat}}</p>
+                            {{/if}}
+                        {{/each}}
+                {{/if}}
+            </div>
+        {{/if}}
+    </section>
 </main>

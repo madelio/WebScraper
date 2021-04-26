@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -25,10 +25,11 @@ namespace WebScraperAPI.WebScraperAPI.Tests.Controllers
         public async Task GetSiteData_ValidUrlArray_Returns_SiteDataList()
         {
             _mockSiteScanner.Setup(s => s.GetSiteData("http://validurl.com"))
-                .Returns(Task.FromResult(new SiteData() {
+                .Returns(Task.FromResult(new SiteData()
+                {
                     Url = "http://validurl.com",
                     RawHtmlContent = "<div>sampleRawHtmlContent1</div>"
-            }));
+                }));
 
             var result = await _siteDataController.Get("http://validurl.com");
             Assert.IsInstanceOf<OkObjectResult>(result);

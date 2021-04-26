@@ -4,8 +4,6 @@ using System.Web;
 using WebScraperScript.WebScraper.Models;
 using WebScraperScript.WebScraper.Services;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace WebScraperAPI.Controllers
 {
     [Route("api/[controller]")]
