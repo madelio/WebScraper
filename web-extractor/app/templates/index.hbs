@@ -3,7 +3,7 @@
 				<h1>Web Extractor</h1>
 				<p>Enter multiple urls on a new line</p>
 				{{textarea value=inputUrls}}
-				<button onclick={{action "getSiteData"}}>Submit</button>
+				<button onclick={{action "getSiteData"}} disabled={{isLoading}}>Submit</button>
 		</section>
 
 		<section>
