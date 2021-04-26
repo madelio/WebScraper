@@ -13,10 +13,12 @@ div {
     justify-content: flex-start;
 }
 
-textarea, .text-content {
+textarea,
+.text-content {
     width: 80%;
     height: 100%;
 }
+
 .text-content textarea{
     width: 100%;
 }

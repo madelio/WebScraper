@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.32" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
@@ -15,8 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="docs\" />
-    <Folder Include="tests\WebScraper.Tests\Helpers\" />
+    <Folder Include="WebScraper.Tests\Services\" />
   </ItemGroup>
 
   <ItemGroup>

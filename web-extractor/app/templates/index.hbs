@@ -6,10 +6,9 @@
         <button onclick={{action 'getSiteData'}}>Submit</button>
     </section>
 
-    {{#if showResults}}
         <section>
+            {{#if showResults}}
                 <h1>Results</h1>
-                {{log showContent}}
                 <div class="text-content">
                     {{#if isLoading}}
                         <p>Loading Results for:</p>
@@ -18,14 +17,16 @@
                     {{else if hasError}}
                         <p>Something Went Wrong: {{error}}</p>
                     {{else}}
-                    {{!-- {{else if showContent}} --}}
                             {{#each results as |result|}}
                                 <p><strong>Result for Url:</strong> {{result.url}}</p>
-                                {{textarea value=result.rawHtmlContent}}
+                                {{#if result.rawHtmlContent}}
+                                    {{textarea value=result.rawHtmlContent}}
+                                {{else}}
+                                    <p>{{errorMessages.invalidUrlFormat}}</p>
+                                {{/if}}
                             {{/each}}
                     {{/if}}
                 </div>
+            {{/if}}
         </section>
-    {{/if}}
-
 </main>

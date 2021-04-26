@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WebScraperScript.src.WebScraper.Models
+﻿namespace WebScraperScript.WebScraper.Models
 {
     public class SiteData
     {
