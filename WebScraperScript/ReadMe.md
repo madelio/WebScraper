@@ -12,4 +12,4 @@ This project is a simple script which scrapes the content of three websites that
 
 * Open PowerShell or Terminal within the `WebScraperScript` project
 * run `dotnet run` in the terminal
-* Observe the 3 html files under the `SavedHtmlPages` that were created from the script
+* Observe the 3 html files under the `SavedHtmlPages` folder that were created from the script

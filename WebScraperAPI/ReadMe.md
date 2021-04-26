@@ -22,8 +22,9 @@ You will need the following things properly installed on your computer.
 
 ## Usage
 You can use Postman or simply the browser to query different urls
-* Encode the URL you'd like to test
+1. Encode the URL you'd like to test
 	1. Open dev tools in Google Chrome
 	2. Click the Console tab
 	3. Run `encodeURIComponent(<sampleUrl>)`
-	4. Get the string value output and pass to the endpoint: https://localhost:44379/api/siteData/<encodedUrl>
+2. Get the string value output and pass to the endpoint: https://localhost:44379/api/siteData/<encodedUrl>
+3. If the url is valid, it should return an object with a url and rawHtmlContent property
