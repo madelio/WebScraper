@@ -16,8 +16,7 @@ namespace WebScraperScript.WebScraper.Services
             var sb = new StringBuilder();
             foreach (var currNode in nodes)
             {
-                var headline = currNode.InnerHtml;
-                sb.AppendLine(headline);
+                sb.AppendLine(currNode.InnerHtml);
             }
 
             return new SiteData()
